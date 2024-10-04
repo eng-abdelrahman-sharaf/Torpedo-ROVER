@@ -23,6 +23,39 @@
             <div>distance Traveled: <div class="variable">0</div> cm</div>  
             <div>obstacle distance: <div class="variable">0</div> cm </div>  
         </div>
+
+
+        <!-- Shapes, colors and metal detection -->
+        <div class="flex flex-col justify-between py-4 px-4  \
+            *:flex *:gap-8 \
+            *:*:flex *:*:flex-col *:*:justify-between *:*:gap-3 \
+            [&>*>*>*:last-child]:text-center">
+            
+            <!-- Shapes -->
+             <div class="">
+                <div>
+                 <div>Shape</div>
+                 <div>Count</div>
+                </div>
+                <!-- Rectangle -->
+                <div>
+                    <div class="w-[80px] h-[80px] bg-gray-500"></div>
+                    <div class="variable">0</div>
+                </div>
+                <!-- Triangle -->
+                <div>
+                    <div class="w-0 h-0 border-x-[40px] border-x-transparent border-b-[80px] border-b-gray-500"></div>
+                    <div class="variable">0</div>
+                </div>
+                <!-- Circle -->
+                <div>
+                    <div class="bg-gray-500 rounded-full w-[80px] h-[80px]"></div>
+                    <div class="variable">0</div>
+                 </div>
+            </div>
+
+
+        </div>
     </div>
 </body>
 </html>
