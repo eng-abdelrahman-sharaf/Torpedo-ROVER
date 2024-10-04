@@ -1,0 +1,3 @@
+[console_scripts]
+keyboard_node = ros2_comm.keyboard_node:main
+

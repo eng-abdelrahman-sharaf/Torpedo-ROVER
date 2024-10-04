@@ -1,58 +1,42 @@
 #ifndef SYSTEM_H
 #define SYSTEM_H
 #include <Arduino.h>
-#include <Servo.h>
-
-
+#include <ESP32Servo.h>
 
 
 
 class System {
 public:
-    System();  // Default constructor
-    void setup();  // Setup method to initialize the system
-    void loop();   // Loop method to continuously read the speed and control the motor
-    
-
-private:
-    int enablePin;  // PWM pin for motor speed
-    int wheel1_pin1;     // Pin for motor direction
-    int wheel1_pin2;       // Pin for motor direction
-    int enablepin2;
-    int wheel2_pin1;
-    int wheel2_pin2;
-    int trigpin;
-    int echopin;
-    // Encoder sensor pins
-   static int encoderPinA;
-   static  int encoderPinB;
-    
-    // Wheel and encoder properties
-    const float _wheelDiameter = 6.5; // Wheel diameter in cm
-    const int _encoderTurns = 20;     // Number of encoder turns per wheel rotation
-volatile static int encoderCount; 
-
-    void motor();    // Method to initialize the motor control pins
-    void setSpeed(int speed);  // Method to set motor speed (only forward)
-    void rotate(int speed);
-    Servo _gripper;  // Create a Servo object for the gripper
-    int _gripperPin; // Pin for the servo
-    void grip(int angle);     // Method to control the servo grip
-      void measureDistance();  // Method to measure distance ultra
-      void calculateWheelDistance();
-       static void updateEncoderCount();  // Interrupt handler for encoder
+    System();          // Constructor to initialize the system
+    void setup();      // Setup function to initialize all components
+    void loop(); 
+    private:      // Main loop to handle system logic
+    void motor();      // Motor initialization
+    void setSpeed(int speed);  // Set motor speed
+    void rotate(int rot_speed);  // Rotate the motors
+    void grip(int angle);  // Control the servo gripper
+    void measureDistance();  // Measure distance using ultrasonic sensor
+   void updateIRCount(); // Method to update IR count based on sensor
+    float calculateDistance(); // Calculate distance traveled
+    static void encoderISR(); // ISR for encoder countin
+    // Pin declarations
+    static const int enablePin;
+    static const int wheel1_pin1;
+    static const int wheel1_pin2;
+    static const int enablepin2;
+    static const int wheel2_pin1;
+    static const int wheel2_pin2;
+    static const int trigpin;
+    static const int echopin;
+    static const int _gripperPin;
+      static constexpr int irPin = 36; // Pin for IR sensor (digital)
+    static volatile int encoderCount; // To hold encoder counts
+    static volatile int irCount; // To hold IR sensor counts
+    int prevState; // Previous state of the IR sensor
+      static constexpr float WHEEL_DIAMETER = 6.5; // Wheel diameter in cm
+    static constexpr int encoder_slot=20;
+    Servo _gripper;  // Servo object for gripper control
 };
 
-#endif // SYSTEM_H
-
-
-
-
-
-
-
-
-
-
-
+#endif
 

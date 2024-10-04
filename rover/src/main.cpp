@@ -1,11 +1,11 @@
 #include "system.h"
 #include <Arduino.h>
-#include <Servo.h>
 
-System motorControl;  // Create an instance of the System class
+System motorControl;
 
 void setup() {
-    motorControl.setup();  // Initialize the system and motor pins
+    Serial.begin(9600);        // Initialize Serial communication
+    motorControl.setup();      // Call motorControl's setup method
 }
 
 void loop() {

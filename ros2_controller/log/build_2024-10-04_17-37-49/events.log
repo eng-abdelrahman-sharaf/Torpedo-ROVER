@@ -1,0 +1,65 @@
+[0.000000] (-) TimerEvent: {}
+[0.000977] (ros2_comm) JobQueued: {'identifier': 'ros2_comm', 'dependencies': OrderedDict()}
+[0.001439] (ros2_comm) JobStarted: {'identifier': 'ros2_comm'}
+[0.098290] (-) TimerEvent: {}
+[0.198674] (-) TimerEvent: {}
+[0.299057] (-) TimerEvent: {}
+[0.399448] (-) TimerEvent: {}
+[0.499816] (-) TimerEvent: {}
+[0.600162] (-) TimerEvent: {}
+[0.700624] (-) TimerEvent: {}
+[0.801066] (-) TimerEvent: {}
+[0.901534] (-) TimerEvent: {}
+[1.001888] (-) TimerEvent: {}
+[1.102289] (-) TimerEvent: {}
+[1.202771] (-) TimerEvent: {}
+[1.303281] (-) TimerEvent: {}
+[1.337261] (ros2_comm) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/ros2_comm', 'build', '--build-base', '/home/omarwaleed/ros2_controller/build/ros2_comm/build', 'install', '--record', '/home/omarwaleed/ros2_controller/build/ros2_comm/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/omarwaleed/ros2_controller/src/ros2_comm', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'omarwaleed', 'LC_TIME': 'ar_EG.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'HOME': '/home/omarwaleed', 'OLDPWD': '/home/omarwaleed/ros2_controller/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'ar_EG.UTF-8', 'SYSTEMD_EXEC_PID': '2421', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/omarwaleed/ros2_ws/install:/home/omarwaleed/turtle_catch_ws/install', 'ROS_DISTRO': 'humble', 'LOGNAME': 'omarwaleed', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'omarwaleed', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/opt/ros/humble/bin:/home/omarwaleed/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/omarwaleed-Lenovo-ideapad-330-15IKB:@/tmp/.ICE-unix/2393,unix/omarwaleed-Lenovo-ideapad-330-15IKB:/tmp/.ICE-unix/2393', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'ar_EG.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/2d804ee6_4487_49b5_97c4_48da4d8726b1', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'ar_EG.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.7ADJU2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.264', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/omarwaleed/ros2_ws/install/keyboard_control:/home/omarwaleed/turtle_catch_ws/install/turtle_catch:/home/omarwaleed/ros2_ws/install/ultrasonic_subscriber:/home/omarwaleed/ros2_ws/install/ultrasonic_sim:/home/omarwaleed/ros2_ws/install/ultrasonic_publisher:/home/omarwaleed/ros2_ws/install/my_robot_controller:/opt/ros/humble', 'SHELL': '/bin/bash', 'LC_NAME': 'ar_EG.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'ar_EG.UTF-8', 'LC_IDENTIFICATION': 'ar_EG.UTF-8', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/omarwaleed/ros2_controller/build/ros2_comm', 'LC_ALL': 'en_US.UTF-8', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/omarwaleed/ros2_controller/build/ros2_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages:/home/omarwaleed/ros2_ws/install/keyboard_control/lib/python3.10/site-packages:/home/omarwaleed/turtle_catch_ws/build/turtle_catch:/home/omarwaleed/turtle_catch_ws/install/turtle_catch/lib/python3.10/site-packages:/home/omarwaleed/ros2_ws/install/ultrasonic_subscriber/lib/python3.10/site-packages:/home/omarwaleed/ros2_ws/install/ultrasonic_sim/lib/python3.10/site-packages:/home/omarwaleed/ros2_ws/install/ultrasonic_publisher/lib/python3.10/site-packages:/home/omarwaleed/ros2_ws/install/my_robot_controller/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'LC_NUMERIC': 'ar_EG.UTF-8', 'LC_PAPER': 'ar_EG.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[1.403411] (-) TimerEvent: {}
+[1.503840] (-) TimerEvent: {}
+[1.604245] (-) TimerEvent: {}
+[1.704703] (-) TimerEvent: {}
+[1.805129] (-) TimerEvent: {}
+[1.892818] (ros2_comm) StderrLine: {'line': b'Traceback (most recent call last):\n'}
+[1.893165] (ros2_comm) StderrLine: {'line': b'  File "/home/omarwaleed/ros2_controller/src/ros2_comm/setup.py", line 5, in <module>\n'}
+[1.893363] (ros2_comm) StderrLine: {'line': b'    setup(\n'}
+[1.893570] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 153, in setup\n'}
+[1.905242] (-) TimerEvent: {}
+[1.906260] (ros2_comm) StderrLine: {'line': b'    return distutils.core.setup(**attrs)\n'}
+[1.906514] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/core.py", line 134, in setup\n'}
+[1.910861] (ros2_comm) StderrLine: {'line': b'    ok = dist.parse_command_line()\n'}
+[1.911204] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/dist.py", line 483, in parse_command_line\n'}
+[1.911567] (ros2_comm) StderrLine: {'line': b'    args = self._parse_command_opts(parser, args)\n'}
+[1.911790] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 1048, in _parse_command_opts\n'}
+[1.919001] (ros2_comm) StderrLine: {'line': b'    nargs = _Distribution._parse_command_opts(self, parser, args)\n'}
+[1.919441] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/dist.py", line 539, in _parse_command_opts\n'}
+[1.919690] (ros2_comm) StderrLine: {'line': b'    cmd_class = self.get_command_class(command)\n'}
+[1.919949] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 893, in get_command_class\n'}
+[1.920468] (ros2_comm) StderrLine: {'line': b'    self.cmdclass[command] = cmdclass = ep.load()\n'}
+[1.920806] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2465, in load\n'}
+[1.937091] (ros2_comm) StderrLine: {'line': b'    return self.resolve()\n'}
+[1.937430] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2471, in resolve\n'}
+[1.937981] (ros2_comm) StderrLine: {'line': b"    module = __import__(self.module_name, fromlist=['__name__'], level=0)\n"}
+[1.938141] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3/dist-packages/setuptools/command/install.py", line 6, in <module>\n'}
+[1.951778] (ros2_comm) StderrLine: {'line': b'    import distutils.command.install as orig\n'}
+[1.952177] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/distutils/command/install.py", line 82, in <module>\n'}
+[1.963028] (ros2_comm) StderrLine: {'line': b'    value = re.sub(r"\\{(.+?)\\}", r"$\\g<1>", value)\n'}
+[1.963365] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/re.py", line 209, in sub\n'}
+[1.989800] (ros2_comm) StderrLine: {'line': b'    return _compile(pattern, flags).sub(repl, string, count)\n'}
+[1.990132] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/re.py", line 303, in _compile\n'}
+[1.991105] (ros2_comm) StderrLine: {'line': b'    p = sre_compile.compile(pattern, flags)\n'}
+[1.991397] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/sre_compile.py", line 788, in compile\n'}
+[1.991647] (ros2_comm) StderrLine: {'line': b'    p = sre_parse.parse(p, flags)\n'}
+[1.991864] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/sre_parse.py", line 955, in parse\n'}
+[1.992182] (ros2_comm) StderrLine: {'line': b'    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)\n'}
+[1.992633] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/sre_parse.py", line 444, in _parse_sub\n'}
+[1.992806] (ros2_comm) StderrLine: {'line': b'    itemsappend(_parse(source, state, verbose, nested + 1,\n'}
+[1.992927] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/sre_parse.py", line 860, in _parse\n'}
+[1.993035] (ros2_comm) StderrLine: {'line': b'    op, av = subpattern[i]\n'}
+[1.993332] (ros2_comm) StderrLine: {'line': b'  File "/usr/lib/python3.10/sre_parse.py", line 165, in __getitem__\n'}
+[1.993577] (ros2_comm) StderrLine: {'line': b'    def __getitem__(self, index):\n'}
+[1.993774] (ros2_comm) StderrLine: {'line': b'KeyboardInterrupt\n'}
+[2.005394] (-) TimerEvent: {}
+[2.027831] (ros2_comm) CommandEnded: {'returncode': -2}
+[2.028450] (ros2_comm) JobEnded: {'identifier': 'ros2_comm', 'rc': 'SIGINT'}
+[2.038787] (-) EventReactorShutdown: {}
