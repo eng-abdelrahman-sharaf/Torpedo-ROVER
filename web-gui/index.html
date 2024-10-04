@@ -121,6 +121,39 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shapes"><path d="M8.3 10a.7.7 0 0 1-.626-1.079L11.4 3a.7.7 0 0 1 1.198-.043L16.3 8.9a.7.7 0 0 1-.572 1.1Z"/><rect x="3" y="14" width="7" height="7" rx="1"/><circle cx="17.5" cy="17.5" r="3.5"/></svg>
             </div>
 
+            <!-- forward speed slider -->
+            <div class="self-stretch flex flex-col items-stretch text-4xl mx-8">
+                <!-- value -->
+                <div class="justify-center flex">
+                    forward speed:
+                    <div class="variable">0</div>
+                </div>
+                <div class="flex items-center">
+                    <!-- left -->
+                    <div>0</div> 
+                    <!-- input -->
+                    <input type="range" min="0" max="255" value="0" step="1" class="appearance-none h-[3px] bg-slate-400 mx-12 grow">
+                    <!-- right -->
+                    <div>255</div> 
+                 </div>
+            </div>
+            
+            <!-- rotation speed slider -->
+            <div class="self-stretch flex flex-col items-stretch text-4xl mx-8">
+                <!-- value -->
+                <div class="justify-center flex">
+                    rotation speed:
+                    <div class="variable">0</div>
+                </div>
+                <div class="flex items-center">
+                    <!-- left -->
+                    <div>0</div> 
+                    <!-- input -->
+                    <input type="range" min="0" max="255" value="0" step="1" class="appearance-none h-[3px] bg-slate-400 mx-12 grow">
+                    <!-- right -->
+                    <div>255</div> 
+                 </div>
+            </div>
 
         </div>
 
