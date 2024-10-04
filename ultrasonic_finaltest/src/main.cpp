@@ -1,7 +1,7 @@
 #include <Arduino.h>
 
-#define echoPin 12
-#define trigPin 13 
+#define echoPin 13
+#define trigPin 12
 
 void setup() {
   Serial.begin(9600);
