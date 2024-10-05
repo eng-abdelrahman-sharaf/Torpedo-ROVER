@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.actuators-cv{
+    svg:hover{
+        @apply opacity-100;
+    }
+    
+    svg:active{
+        @apply border-gray-500;
+    }
+}
+
+*{
+    box-sizing: border-box;
+}
