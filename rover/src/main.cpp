@@ -1,13 +1,20 @@
 #include "system.h"
 #include <Arduino.h>
+#include "communication.h"
+#include <micro_ros_platformio.h>
 
-System motorControl;
+Communication comm; // Create an instance of the Communication class
 
-void setup() {
-    Serial.begin(9600);        // Initialize Serial communication
-    motorControl.setup();      // Call motorControl's setup method
+void setup() { 
+  Serial.begin(115200);
+  Serial.println("hi");
+
+        comm.initialize_comms();  
+        // Initialize ROS communication
+      // Call motorControl's setup method
 }
 
 void loop() {
-    motorControl.loop();  // Continuously check for speed and control the motor
+      // Continuously check for speed and control the motor
+   comm.spin();
 }
