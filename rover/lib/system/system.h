@@ -14,10 +14,11 @@ public:
   void rotate_right(int rot_speed); // Rotate the motors
   void rotate_left(int rot_speed);
   void stop();
+  void grip(int angle); // Control the servo gripper
 
 private:                            // Main loop to handle system logic
 
-  void grip(int angle); // Control the servo gripper
+  
 
   void measureDistance(); // Measure distance using ultrasonic sensor
 

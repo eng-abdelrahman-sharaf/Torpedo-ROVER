@@ -83,7 +83,8 @@ private:
     rcl_timer_t timer;
 
     // Callback function for subscriber
-    static void subscription_callback(const void *msgin);
+    static void movement_subscription_callback(const void *msgin);
+    static void speed_subscription_callback (const void *msgin);
 
 public:
 
