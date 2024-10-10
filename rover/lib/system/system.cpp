@@ -7,16 +7,17 @@ System::System() {
     previous_state = LOW; // Initialize previous state
 }
 // Pin definitions (moved from .cpp to .h)
-const int System::enablePin = 5;
-const int System::wheel1_pin1 = 18;
-const int System::wheel1_pin2 = 19;
-const int System::enablepin2 = 23;
-const int System::wheel2_pin1 = 25;
-const int System::wheel2_pin2 = 26;
-const int System::trigpin = 32;
-const int System::echopin = 33;
+const int System::enablePin = 19;
+const int System::wheel1_pin1 = 22;
+const int System::wheel1_pin2 = 33;
+const int System::enablepin2 = 34;
+const int System::wheel2_pin1 = 18;
+const int System::wheel2_pin2 = 5;
+const int System::trigpin = 2;
+const int System::echopin = 15;
 const int System ::IRpin=28;
 const int System::_gripperPin = 27;
+const int System::metal = 39;
 
 // Setup method for initializing the system
 void System::setup()
@@ -37,6 +38,7 @@ void System::motor()
     pinMode(trigpin, OUTPUT);
     pinMode(echopin, INPUT);
     pinMode(IRpin,INPUT);
+    pinMode(metal,INPUT);
     _gripper.attach(_gripperPin); // Attach the servo to the gripper pin
 }
 
@@ -81,9 +83,12 @@ void System::move_forward(int speed)
 {
     if (speed >= 0 && speed <= 255)
     {
-        digitalWrite(22,LOW);
-        // analogWrite(enablePin, speed);
-        // analogWrite(enablepin2, speed);
+        digitalWrite(wheel1_pin1, HIGH);
+        digitalWrite(wheel1_pin2, LOW);
+        digitalWrite(wheel2_pin1, HIGH);
+        digitalWrite(wheel2_pin2, LOW);
+        analogWrite(enablePin, speed);
+        analogWrite(enablepin2, speed);
     }
     else
     {
@@ -159,7 +164,7 @@ void System::grip(int angle)
 }
 
 // Method to measure distance using ultrasonic sensor
-void System::measureDistance()
+float System::measureDistance()
 {
     long duration, distance;
     digitalWrite(trigpin, LOW);
@@ -171,9 +176,7 @@ void System::measureDistance()
     duration = pulseIn(echopin, HIGH);
     distance = (duration / 2) * 0.0343; // Convert to cm
 
-    // Serial.print("Distance: ");
-    // Serial.print(distance);
-    // Serial.println(" cm");
+    return distance;
 }
 // Method to update the IR sensor pulse count
 void System::updateIRCount()
@@ -202,4 +205,13 @@ float System::calculateDistance()
 
     // Calculate total distance traveled
     return pulse_count * distance_per_pulse;
+}
+bool System ::metal_detect()
+{
+    long x=analogRead(metal); // o to 1023
+    if (x<threshold)
+    {
+        return true;
+    }
+ return false;
 }

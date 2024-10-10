@@ -15,12 +15,13 @@ public:
   void rotate_left(int rot_speed);
   void stop();
   void grip(int angle); // Control the servo gripper
+  bool metal_detect();
+  float measureDistance(); // Measure distance using ultrasonic sensor
 
 private:                            // Main loop to handle system logic
 
   
 
-  void measureDistance(); // Measure distance using ultrasonic sensor
 
   void updateIRCount();      // Method to update IR count based on sensor
   float calculateDistance(); // Method to calculate distance traveled
@@ -35,6 +36,8 @@ private:                            // Main loop to handle system logic
   static const int echopin;
   static const int _gripperPin;
   static const int IRpin;
+   static const int metal;
+   const long threshold = 2.5 * 1023 / 3.3;
   Servo _gripper; // Servo object for gripper control
 
   int pulse_count = 0;              // Pulse counter

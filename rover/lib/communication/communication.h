@@ -1,67 +1,3 @@
-
-// #include <Arduino.h>
-// #include <stdio.h>
-// #include <rcl/rcl.h>
-// #include <rcl/error_handling.h>
-// #include <rclc/rclc.h>
-// #include <rclc/executor.h>
-// #include <micro_ros_platformio.h>
-// #include <std_msgs/msg/int32.h>
-
-// rcl_subscription_t subscriber;
-// std_msgs__msg__Int32 msg;
-// rclc_executor_t executor;
-// rclc_support_t support;
-// rcl_allocator_t allocator;
-// rcl_node_t node;
-// rcl_timer_t timer;
-
-// // #define RCCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){error_loop();}}
-// // #define RCSOFTCHECK(fn) { rcl_ret_t temp_rc = fn; if((temp_rc != RCL_RET_OK)){}}
-
-// // void error_loop(){
-// //   while(1){
-// //     digitalWrite(LED_PIN, !digitalRead(LED_PIN));
-// //     delay(100);
-// //   }
-// // }
-
-// void subscription_callback(const void *msgin)
-// {
-//     const std_msgs__msg__Int32 *msg = (const std_msgs__msg__Int32 *)msgin;
-//     // digitalWrite(LED_PIN, (msg->data == 0) ? LOW : HIGH);
-// }
-
-// void initalize_comms()
-// {
-//     Serial.begin(115200);
-//     set_microros_serial_transports(Serial);
-
-//     allocator = rcl_get_default_allocator();
-
-//     // create init_options
-//     rclc_support_init(&support, 0, NULL, &allocator);
-
-//     // create node
-//     rclc_node_init_default(&node, "micro_ros_arduino_node", "", &support);
-
-//     // create subscriber
-//     rclc_subscription_init_default(
-//         &subscriber,
-//         &node,
-//         ROSIDL_GET_MSG_TYPE_SUPPORT(std_msgs, msg, Int32),
-//         "micro_ros_arduino_subscriber");
-
-//     // create executor
-//     rclc_executor_init(&executor, &support.context, 1, &allocator);
-//     rclc_executor_add_subscription(&executor, &subscriber, &msg, &subscription_callback, ON_NEW_DATA);
-// }
-
-// void spin()
-// {
-//     delay(100);
-//     rclc_executor_spin_some(&executor, RCL_MS_TO_NS(100));
-// }
 #ifndef COMMUNICATION_H
 #define COMMUNICATION_H
 
@@ -69,29 +5,44 @@
 #include <rclc/rclc.h>
 #include <rclc/executor.h>
 #include <std_msgs/msg/int32.h>
+#include <std_msgs/msg/float32.h>
+#include <std_msgs/msg/int32.h>
+#include "std_msgs/msg/bool.h"
 
 class Communication
 {
 private:
-    rcl_subscription_t subscriber;
-    std_msgs__msg__Int32 msg;
+    rcl_subscription_t movement_subscriber;    // Subscriber for movement commands
+    rcl_subscription_t speed_subscriber;       // Subscriber for motor speed
+    std_msgs__msg__Int32 movement_msg;         // Message for movement commands
+    std_msgs__msg__Int32 speed_msg;            // Message for motor speed
 
-    rclc_executor_t executor;
-    rclc_support_t support;
-    rcl_allocator_t allocator;
-    rcl_node_t node;
-    rcl_timer_t timer;
+    rclc_executor_t executor;                   // Executor to handle subscriptions
+    rclc_support_t support;                     // Support structure for ROS 2
+    rcl_allocator_t allocator;                  // Allocator for memory management
+    rcl_node_t node;                            // Node for communication
+    rcl_timer_t timer;   
+    
+    // Publisher for ultrasonic sensor data
+rcl_publisher_t ultrasonic_publisher;
+std_msgs__msg__Float32 ultrasonic_msg;
 
-    // Callback function for subscriber
+// Publisher for metal detector data
+rcl_publisher_t metal_detector_publisher;
+std_msgs__msg__Bool metal_detector_msg;                       // Timer for periodic tasks (if needed)
+
+    // Callback functions for subscribers
     static void movement_subscription_callback(const void *msgin);
-    static void speed_subscription_callback (const void *msgin);
+    static void speed_subscription_callback(const void *msgin);
+
+    // Function to publish sensor data
+    void publish_sensors();
 
 public:
-
-    // Initialize communication
+    // Initialize communication and set up subscribers
     void initialize_comms();
 
-    // Spin to process messages
+    // Spin to process messages and callbacks
     void spin();
 };
 
