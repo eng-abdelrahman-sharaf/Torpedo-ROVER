@@ -1,44 +1,34 @@
 #include "system.h"
 #include <Arduino.h>
-#include <Servo.h>
 
-volatile int System::encoderCount = 0;  // Define the static encoder count variable
+// Constructor definition
+System::System() {
+    pulse_count = 0; // Initialize pulse count
+    previous_state = LOW; // Initialize previous state
+}
+// Pin definitions (moved from .cpp to .h)
+const int System::enablePin = 19;
+const int System::wheel1_pin1 = 22;
+const int System::wheel1_pin2 = 33;
+const int System::enablepin2 = 34;
+const int System::wheel2_pin1 = 18;
+const int System::wheel2_pin2 = 5;
+const int System::trigpin = 2;
+const int System::echopin = 15;
+const int System ::IRpin=28;
+const int System::_gripperPin = 27;
+const int System::metal = 39;
 
-// Setup method (initializes the system)
+// Setup method for initializing the system
 void System::setup()
 {
-    Serial.begin(115200); // Initialize Serial communication
-    motor();              // Call motor to set pin modes
-    // Attach the servo to its pin
-    _gripper.attach(_gripperPin);
-    _gripper.write(0); // Initial position of the gripper (0 degrees)
-    Serial.println("Enter a number (1 to run motors, 2 for a different task):");
+    motor(); // Initialize motor pins
 }
-// Constructor: Set default pin values
-System::System()
-{
-    enablePin = 5;    // PWM pin for motor speed control
-    wheel1_pin1 = 18; // Motor direction pin 1
-    wheel1_pin2 = 19; // Motor direction pin 2
-    enablepin2 = 23;  // PWM pin for motor 2 speed control
-    wheel2_pin1 = 25; // Motor 2 direction pin 1
-    wheel2_pin2 = 26; // Motor 2 direction pin 2
-    // Attach the servo to its pin
-    // Pin for the servo
-    _gripperPin = 27; // Adjust this pin based on your wiring
-    // Pins for the ultrasonic sensor
-    trigpin=32;
-    echopin=33;
-      // Pins for the encoder sensor
-    encoderPinA = 34; // Encoder pin A
-    encoderPinB = 35; // Encoder pin B
 
-    // Initialize encoder count
-    encoderCount = 0;
-}
-// Method to initialize motor control pins
+// Motor initialization method
 void System::motor()
 {
+    pinMode(22 , OUTPUT);
     pinMode(enablePin, OUTPUT);
     pinMode(wheel1_pin1, OUTPUT);
     pinMode(wheel1_pin2, OUTPUT);
@@ -47,167 +37,181 @@ void System::motor()
     pinMode(wheel2_pin2, OUTPUT);
     pinMode(trigpin, OUTPUT);
     pinMode(echopin, INPUT);
-  // Initialize encoder pins
-    pinMode(encoderPinA, INPUT_PULLUP);
-    pinMode(encoderPinB, INPUT_PULLUP);
-
-    // Attach interrupts for the encoder
-    attachInterrupt(digitalPinToInterrupt(encoderPinA), []() {
-        System::updateEncoderCount();
-    }, CHANGE);
+    pinMode(IRpin,INPUT);
+    pinMode(metal,INPUT);
+    _gripper.attach(_gripperPin); // Attach the servo to the gripper pin
 }
 
-// Loop method (continuously runs to read speed and control the motor)
-void System::loop()
-{
-    if (Serial.available())
-    {
-        int command = Serial.parseInt(); // Read an integer from serial input
+// Main loop for running motor control and reading inputs
+// void System::loop()
+// {
+//     int command = 1; // For now it's hardcoded, adjust it later for user input
 
-        switch (command)
-        {
-        case 1:
-            // Prompt user for speed
-            Serial.println("Enter speed (0 to 255):");
-            while (true)
-            {
-                if (Serial.available())
-                {
-                    int speed = Serial.parseInt(); // Read the speed from input
+//     switch (command)
+//     {
+//     case 1:
+//         move_forward(100); // Example motor speed
+//         break;
+//     case 2:
+//         rotate_right(100); // Example rotation
+//         break;
+//     case 3:
+//         stop();
+//         break;
+//     case 4:
+//         grip(90); // Grip at 90 degrees
+//         break;
+//     case 5:
+//         grip(0); // Release grip
+//         break;
+//     case 6:
+//         measureDistance(); // Measure distance with ultrasonic sensor
+//         break;
+//     case 7:
+//         updateIRCount(); // Update IR count based on readings
+//          break;
+//      case 8: 
+//      calculateDistance();
+//         break;
+//     default:
+//         Serial.println("Invalid command.");
+//     }
+// }
 
-                    if (speed >= 0 && speed <= 255)
-                    {
-                        setSpeed(speed); // Set both motors to the specified speed
-                        Serial.print("Both motors running at speed: ");
-                        Serial.println(speed);
-                    }
-                    else
-                    {
-                        Serial.println("Invalid speed. Enter a value between 0 and 255.");
-                    }
-
-                    // Break the loop after processing the input
-                    break;
-                }
-            }
-            break;
-        case 2:
-
-            Serial.println("rotat motor either cw or acw");
-            int rotation_speed = Serial.parseInt();
-            rotate(rotation_speed);
-
-            break;
-        case 3:
-
-            grip(90); // Call the grip function with the specified angle
-            Serial.print("Gripper set to angle: 90");
-            // Break the loop after processing the input
-            break;
-        case 4:
-
-            grip(0); // Call the grip function with the specified angle
-            Serial.print("Gripper set to angle: 90");
-            // Break the loop after processing the input
-            break;
-            case 5:
-                // Call the measure  ultra distance function
-                measureDistance();
-                break;
-                case 6:
-                // Calculate and display the distance traveled by the wheels
-                calculateWheelDistance();
-                break;
-        default:
-            Serial.println("Invalid command. Enter 1 to run motors or 2 to grip.");
-            break;
-        }
-    }
-}
-
-// Private method to set motor speed (only forward)
-void System::setSpeed(int speed)
+// Method to set motor speed
+void System::move_forward(int speed)
 {
     if (speed >= 0 && speed <= 255)
     {
-        digitalWrite(wheel1_pin1, HIGH); // Set direction forward
-        digitalWrite(wheel1_pin2, LOW);  // Set direction forward
-        analogWrite(enablePin, speed);   // Control speed using PWM
-        digitalWrite(wheel2_pin1, HIGH); // Set direction forward
-        digitalWrite(wheel2_pin2, LOW);  // Set direction forward
-        analogWrite(enablepin2, speed);  // Control speed using PWM
+        digitalWrite(wheel1_pin1, HIGH);
+        digitalWrite(wheel1_pin2, LOW);
+        digitalWrite(wheel2_pin1, HIGH);
+        digitalWrite(wheel2_pin2, LOW);
+        analogWrite(enablePin, speed);
+        analogWrite(enablepin2, speed);
     }
     else
     {
-        analogWrite(enablePin, 0); // Stop the motor if the speed is out of range
-        analogWrite(enablepin2, 0);
+        analogWrite(enablePin, 0);  // Stop motor
+        analogWrite(enablepin2, 0); // Stop motor
     }
 }
-void System::rotate(int rot_speed)
+
+// Method to rotate motors in opposite directions
+void System::rotate_right(int rot_speed)
 {
-    if (rot_speed > 0) // rot motor 1 stop 2
+    if (rot_speed > 0)
     {
-        digitalWrite(wheel1_pin1, HIGH);   // Set direction forward
-        digitalWrite(wheel1_pin2, LOW);    // Set direction forward
-        analogWrite(enablePin, rot_speed); // Control speed using PWM
+        // Rotate motor 1 forward, motor 2 stop
+        digitalWrite(wheel1_pin1, HIGH);
+        digitalWrite(wheel1_pin2, LOW);
+        analogWrite(enablePin, rot_speed);
+
         digitalWrite(wheel2_pin1, LOW);
         digitalWrite(wheel2_pin2, LOW);
         analogWrite(enablepin2, 0);
     }
     else
     {
-        digitalWrite(wheel2_pin1, HIGH);    // Set direction forward
-        digitalWrite(wheel2_pin2, LOW);     // Set direction forward
-        analogWrite(enablepin2, rot_speed); // Control speed using PWM
-        digitalWrite(wheel1_pin1, LOW);     // Set direction forward
-        digitalWrite(wheel1_pin2, LOW);     // Set direction forward
-        analogWrite(enablePin, 0);          // Control speed using PWM
+        // stop 2 motors
+        digitalWrite(wheel2_pin1, LOW);
+        digitalWrite(wheel2_pin2, LOW);
+        analogWrite(enablepin2, 0);
+
+        digitalWrite(wheel1_pin1, LOW);
+        digitalWrite(wheel1_pin2, LOW);
+        analogWrite(enablePin, 0);
     }
 }
-// Method to control the servo grip
+void System::rotate_left(int rot_speed)
+{
+    if (rot_speed > 0)
+    {
+        // Rotate motor 2 forward, motor 1 stop
+        digitalWrite(wheel2_pin1, HIGH);
+        digitalWrite(wheel2_pin2, LOW);
+        analogWrite(enablepin2, rot_speed);
+
+        digitalWrite(wheel1_pin1, LOW);
+        digitalWrite(wheel1_pin2, LOW);
+        analogWrite(enablePin, 0);
+    }
+    else
+    {
+        // stop 2 motors
+        digitalWrite(wheel2_pin1, LOW);
+        digitalWrite(wheel2_pin2, LOW);
+        analogWrite(enablepin2, 0);
+
+        digitalWrite(wheel1_pin1, LOW);
+        digitalWrite(wheel1_pin2, LOW);
+        analogWrite(enablePin, 0);
+    }
+}
+void System :: stop()
+{
+    digitalWrite(wheel1_pin1, LOW);
+    digitalWrite(wheel1_pin2, LOW);
+    analogWrite(enablePin, 0);
+    digitalWrite(wheel2_pin1, LOW);
+    digitalWrite(wheel2_pin2, LOW);
+    analogWrite(enablepin2, 0);
+}
+// Method to control the servo gripper
 void System::grip(int angle)
 {
     _gripper.write(angle); // Move the servo to the specified angle
 }
-void System::measureDistance() {
+
+// Method to measure distance using ultrasonic sensor
+float System::measureDistance()
+{
     long duration, distance;
-    // Clear the trigger pin
     digitalWrite(trigpin, LOW);
     delayMicroseconds(2);
-    // Set the trigger pin high for 10 microseconds
     digitalWrite(trigpin, HIGH);
     delayMicroseconds(10);
     digitalWrite(trigpin, LOW);
 
-    // Read the echo pin
-    duration = pulseIn(echopin,HIGH);
+    duration = pulseIn(echopin, HIGH);
+    distance = (duration / 2) * 0.0343; // Convert to cm
 
-    // Calculate the distance (in cm)
-    distance = (duration / 2) * 0.0343; // Speed of sound is ~0.0343 cm/μs
-
-    // Print the distance to the Serial Monitor
-    Serial.print("Distance: ");
-    Serial.print(distance);
-    Serial.println(" cm");
+    return distance;
 }
-// Method to update encoder count (interrupt handler)
-void System::updateEncoderCount() {
-    if (digitalRead(encoderPinA) == digitalRead(encoderPinB)) {
-        encoderCount++;
-    } else {
-        encoderCount--;
+// Method to update the IR sensor pulse count
+void System::updateIRCount()
+{
+    int current_state = digitalRead(IRpin);  // Read the current state of the IR sensor
+
+    // Check if the state has changed from the previous reading
+    if (current_state != previous_state)
+    {
+        if (current_state == HIGH)  // If the state changed to HIGH (detecting a slot)
+        {
+            pulse_count++;  // Increment the pulse count
+        }
+        previous_state = current_state;  // Update the previous state
     }
 }
 
-// Method to calculate the distance traveled by the wheels
-void System::calculateWheelDistance() {
+// Method to calculate distance traveled using the encoder
+float System::calculateDistance()
+{
     // Calculate the wheel circumference
-    float wheelCircumference = _wheelDiameter * PI;  // C = π * D
-    // Calculate the distance traveled in cm
-    float distanceTraveled = (encoderCount / (float)_encoderTurns) * wheelCircumference;
+    float circumference = PI * wheel_diameter;  // in cm
 
-    // Print the calculated distance
-    Serial.print("Distance traveled: ");
-    Serial.print(distanceTraveled);
-    Serial.println(" cm");
+    // Calculate the distance per pulse
+    float distance_per_pulse = circumference / encoder_slots;
+
+    // Calculate total distance traveled
+    return pulse_count * distance_per_pulse;
+}
+bool System ::metal_detect()
+{
+    long x=analogRead(metal); // o to 1023
+    if (x<threshold)
+    {
+        return true;
+    }
+ return false;
 }

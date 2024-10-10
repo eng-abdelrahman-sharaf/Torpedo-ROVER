@@ -1,0 +1,21 @@
+[1.114s] Invoking command in '/home/omarwaleed/ros2_controller/build/ros2_comm': PYTHONPATH=/home/omarwaleed/ros2_controller/build/ros2_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/omarwaleed/ros2_controller/build/ros2_comm/build --no-deps symlink_data --force
+[1.808s] running develop
+[1.809s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[1.809s]   warnings.warn(
+[2.203s] running egg_info
+[2.203s] writing ros2_comm.egg-info/PKG-INFO
+[2.204s] writing dependency_links to ros2_comm.egg-info/dependency_links.txt
+[2.204s] writing entry points to ros2_comm.egg-info/entry_points.txt
+[2.205s] writing requirements to ros2_comm.egg-info/requires.txt
+[2.205s] writing top-level names to ros2_comm.egg-info/top_level.txt
+[2.208s] reading manifest file 'ros2_comm.egg-info/SOURCES.txt'
+[2.291s] writing manifest file 'ros2_comm.egg-info/SOURCES.txt'
+[2.293s] running build_ext
+[2.294s] Creating /home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages/ros2-comm.egg-link (link to .)
+[2.295s] Installing keyboard_node script to /home/omarwaleed/ros2_controller/install/ros2_comm/lib/ros2_comm
+[2.296s] 
+[2.296s] Installed /home/omarwaleed/ros2_controller/build/ros2_comm
+[2.296s] running symlink_data
+[2.297s] symbolically linking /home/omarwaleed/ros2_controller/build/ros2_comm/resource/ros2_comm -> /home/omarwaleed/ros2_controller/install/ros2_comm/share/ament_index/resource_index/packages
+[2.297s] symbolically linking /home/omarwaleed/ros2_controller/build/ros2_comm/package.xml -> /home/omarwaleed/ros2_controller/install/ros2_comm/share/ros2_comm
+[2.349s] Invoked command in '/home/omarwaleed/ros2_controller/build/ros2_comm' returned '0': PYTHONPATH=/home/omarwaleed/ros2_controller/build/ros2_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py develop --editable --build-directory /home/omarwaleed/ros2_controller/build/ros2_comm/build --no-deps symlink_data --force

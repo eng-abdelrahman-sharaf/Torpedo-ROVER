@@ -1,0 +1,33 @@
+[1.955s] Invoking command in '/home/omarwaleed/ros2_controller/src/ros2_comm': PYTHONPATH=/home/omarwaleed/ros2_controller/build/ros2_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_comm build --build-base /home/omarwaleed/ros2_controller/build/ros2_comm/build install --record /home/omarwaleed/ros2_controller/build/ros2_comm/install.log --single-version-externally-managed install_data
+[2.687s] running egg_info
+[2.690s] creating ../../build/ros2_comm/ros2_comm.egg-info
+[2.690s] writing ../../build/ros2_comm/ros2_comm.egg-info/PKG-INFO
+[2.691s] writing dependency_links to ../../build/ros2_comm/ros2_comm.egg-info/dependency_links.txt
+[2.691s] writing entry points to ../../build/ros2_comm/ros2_comm.egg-info/entry_points.txt
+[2.691s] writing requirements to ../../build/ros2_comm/ros2_comm.egg-info/requires.txt
+[2.692s] writing top-level names to ../../build/ros2_comm/ros2_comm.egg-info/top_level.txt
+[2.692s] writing manifest file '../../build/ros2_comm/ros2_comm.egg-info/SOURCES.txt'
+[2.696s] reading manifest file '../../build/ros2_comm/ros2_comm.egg-info/SOURCES.txt'
+[2.698s] writing manifest file '../../build/ros2_comm/ros2_comm.egg-info/SOURCES.txt'
+[2.698s] running build
+[2.698s] running build_py
+[2.699s] creating /home/omarwaleed/ros2_controller/build/ros2_comm/build
+[2.699s] creating /home/omarwaleed/ros2_controller/build/ros2_comm/build/lib
+[2.699s] creating /home/omarwaleed/ros2_controller/build/ros2_comm/build/lib/ros2_comm
+[2.700s] copying ros2_comm/__init__.py -> /home/omarwaleed/ros2_controller/build/ros2_comm/build/lib/ros2_comm
+[2.700s] running install
+[2.701s] running install_lib
+[2.702s] creating /home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages/ros2_comm
+[2.703s] copying /home/omarwaleed/ros2_controller/build/ros2_comm/build/lib/ros2_comm/__init__.py -> /home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages/ros2_comm
+[2.704s] byte-compiling /home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages/ros2_comm/__init__.py to __init__.cpython-310.pyc
+[2.704s] running install_data
+[2.705s] creating /home/omarwaleed/ros2_controller/install/ros2_comm/share/ament_index
+[2.705s] creating /home/omarwaleed/ros2_controller/install/ros2_comm/share/ament_index/resource_index
+[2.706s] creating /home/omarwaleed/ros2_controller/install/ros2_comm/share/ament_index/resource_index/packages
+[2.706s] copying resource/ros2_comm -> /home/omarwaleed/ros2_controller/install/ros2_comm/share/ament_index/resource_index/packages
+[2.706s] copying package.xml -> /home/omarwaleed/ros2_controller/install/ros2_comm/share/ros2_comm
+[2.706s] running install_egg_info
+[2.711s] Copying ../../build/ros2_comm/ros2_comm.egg-info to /home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages/ros2_comm-0.0.0-py3.10.egg-info
+[2.807s] running install_scripts
+[2.863s] writing list of installed files to '/home/omarwaleed/ros2_controller/build/ros2_comm/install.log'
+[2.917s] Invoked command in '/home/omarwaleed/ros2_controller/src/ros2_comm' returned '0': PYTHONPATH=/home/omarwaleed/ros2_controller/build/ros2_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_comm build --build-base /home/omarwaleed/ros2_controller/build/ros2_comm/build install --record /home/omarwaleed/ros2_controller/build/ros2_comm/install.log --single-version-externally-managed install_data

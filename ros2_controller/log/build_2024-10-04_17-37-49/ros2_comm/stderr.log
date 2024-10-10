@@ -1,0 +1,38 @@
+Traceback (most recent call last):
+  File "/home/omarwaleed/ros2_controller/src/ros2_comm/setup.py", line 5, in <module>
+    setup(
+  File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 153, in setup
+    return distutils.core.setup(**attrs)
+  File "/usr/lib/python3.10/distutils/core.py", line 134, in setup
+    ok = dist.parse_command_line()
+  File "/usr/lib/python3.10/distutils/dist.py", line 483, in parse_command_line
+    args = self._parse_command_opts(parser, args)
+  File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 1048, in _parse_command_opts
+    nargs = _Distribution._parse_command_opts(self, parser, args)
+  File "/usr/lib/python3.10/distutils/dist.py", line 539, in _parse_command_opts
+    cmd_class = self.get_command_class(command)
+  File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 893, in get_command_class
+    self.cmdclass[command] = cmdclass = ep.load()
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2465, in load
+    return self.resolve()
+  File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2471, in resolve
+    module = __import__(self.module_name, fromlist=['__name__'], level=0)
+  File "/usr/lib/python3/dist-packages/setuptools/command/install.py", line 6, in <module>
+    import distutils.command.install as orig
+  File "/usr/lib/python3.10/distutils/command/install.py", line 82, in <module>
+    value = re.sub(r"\{(.+?)\}", r"$\g<1>", value)
+  File "/usr/lib/python3.10/re.py", line 209, in sub
+    return _compile(pattern, flags).sub(repl, string, count)
+  File "/usr/lib/python3.10/re.py", line 303, in _compile
+    p = sre_compile.compile(pattern, flags)
+  File "/usr/lib/python3.10/sre_compile.py", line 788, in compile
+    p = sre_parse.parse(p, flags)
+  File "/usr/lib/python3.10/sre_parse.py", line 955, in parse
+    p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+  File "/usr/lib/python3.10/sre_parse.py", line 444, in _parse_sub
+    itemsappend(_parse(source, state, verbose, nested + 1,
+  File "/usr/lib/python3.10/sre_parse.py", line 860, in _parse
+    op, av = subpattern[i]
+  File "/usr/lib/python3.10/sre_parse.py", line 165, in __getitem__
+    def __getitem__(self, index):
+KeyboardInterrupt

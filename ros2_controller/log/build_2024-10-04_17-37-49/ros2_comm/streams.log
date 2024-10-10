@@ -1,0 +1,40 @@
+[1.363s] Invoking command in '/home/omarwaleed/ros2_controller/src/ros2_comm': PYTHONPATH=/home/omarwaleed/ros2_controller/build/ros2_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_comm build --build-base /home/omarwaleed/ros2_controller/build/ros2_comm/build install --record /home/omarwaleed/ros2_controller/build/ros2_comm/install.log --single-version-externally-managed install_data
+[1.892s] Traceback (most recent call last):
+[1.892s]   File "/home/omarwaleed/ros2_controller/src/ros2_comm/setup.py", line 5, in <module>
+[1.892s]     setup(
+[1.892s]   File "/usr/lib/python3/dist-packages/setuptools/__init__.py", line 153, in setup
+[1.905s]     return distutils.core.setup(**attrs)
+[1.905s]   File "/usr/lib/python3.10/distutils/core.py", line 134, in setup
+[1.910s]     ok = dist.parse_command_line()
+[1.910s]   File "/usr/lib/python3.10/distutils/dist.py", line 483, in parse_command_line
+[1.910s]     args = self._parse_command_opts(parser, args)
+[1.910s]   File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 1048, in _parse_command_opts
+[1.918s]     nargs = _Distribution._parse_command_opts(self, parser, args)
+[1.918s]   File "/usr/lib/python3.10/distutils/dist.py", line 539, in _parse_command_opts
+[1.918s]     cmd_class = self.get_command_class(command)
+[1.919s]   File "/usr/lib/python3/dist-packages/setuptools/dist.py", line 893, in get_command_class
+[1.919s]     self.cmdclass[command] = cmdclass = ep.load()
+[1.919s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2465, in load
+[1.936s]     return self.resolve()
+[1.936s]   File "/usr/lib/python3/dist-packages/pkg_resources/__init__.py", line 2471, in resolve
+[1.937s]     module = __import__(self.module_name, fromlist=['__name__'], level=0)
+[1.937s]   File "/usr/lib/python3/dist-packages/setuptools/command/install.py", line 6, in <module>
+[1.951s]     import distutils.command.install as orig
+[1.951s]   File "/usr/lib/python3.10/distutils/command/install.py", line 82, in <module>
+[1.962s]     value = re.sub(r"\{(.+?)\}", r"$\g<1>", value)
+[1.962s]   File "/usr/lib/python3.10/re.py", line 209, in sub
+[1.989s]     return _compile(pattern, flags).sub(repl, string, count)
+[1.989s]   File "/usr/lib/python3.10/re.py", line 303, in _compile
+[1.990s]     p = sre_compile.compile(pattern, flags)
+[1.990s]   File "/usr/lib/python3.10/sre_compile.py", line 788, in compile
+[1.990s]     p = sre_parse.parse(p, flags)
+[1.991s]   File "/usr/lib/python3.10/sre_parse.py", line 955, in parse
+[1.991s]     p = _parse_sub(source, state, flags & SRE_FLAG_VERBOSE, 0)
+[1.991s]   File "/usr/lib/python3.10/sre_parse.py", line 444, in _parse_sub
+[1.991s]     itemsappend(_parse(source, state, verbose, nested + 1,
+[1.992s]   File "/usr/lib/python3.10/sre_parse.py", line 860, in _parse
+[1.992s]     op, av = subpattern[i]
+[1.992s]   File "/usr/lib/python3.10/sre_parse.py", line 165, in __getitem__
+[1.992s]     def __getitem__(self, index):
+[1.992s] KeyboardInterrupt
+[2.027s] Invoked command in '/home/omarwaleed/ros2_controller/src/ros2_comm' returned '-2': PYTHONPATH=/home/omarwaleed/ros2_controller/build/ros2_comm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/omarwaleed/ros2_controller/install/ros2_comm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated setup.py egg_info --egg-base ../../build/ros2_comm build --build-base /home/omarwaleed/ros2_controller/build/ros2_comm/build install --record /home/omarwaleed/ros2_controller/build/ros2_comm/install.log --single-version-externally-managed install_data
