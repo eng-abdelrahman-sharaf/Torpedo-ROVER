@@ -18,6 +18,15 @@ const ArrowUp = document.getElementById("arrow-up");
 const rotateLeft = document.getElementById("rotate-left");
 const rotateRight = document.getElementById("rotate-right");
 const keys = [{ key: "ArrowUp", object: ArrowUp }, { key: "ArrowLeft", object: rotateLeft }, { key: "ArrowRight", object: rotateRight }];
+const ctas = [
+    { key: "grip", object: document.getElementById("grip"), message: "grip" }, 
+    // line-follow - > stop
+    { key: "line-follow", object: document.getElementById("line-follow"), message: "stop" },
+    // encoder-reset
+    { key: "encoder-reset", object: document.getElementById("encoder-reset"), message: "encoder-reset" },
+    // shape-detect -> stop
+    {key: "shape-detect", object: document.getElementById("shape-detect"), message: "stop"},
+];
 let chosenOperation = "stop";
 
 document.addEventListener("keydown", function (e) {
@@ -45,7 +54,12 @@ document.addEventListener("keyup", function (e) {
     }
 });
 
-document.getElementById("grip").addEventListener("click", function () { 
-    if (chosenOperation == "grip") publish("/keyboard_input", "std_msgs/String", "grip");
-    else publish("/keyboard_input", "std_msgs/String", "stop");
-})
+for (let cta of ctas) { 
+    cta.object.addEventListener("click", function () {
+        if (cta.key == chosenOperation) return;
+        else {
+            chosenOperation = cta.key;
+            publish("/keyboard_input", "std_msgs/String", cta.message);
+        }
+    });
+}
