@@ -12,24 +12,30 @@
 class Communication
 {
 private:
-    rcl_subscription_t movement_subscriber;    // Subscriber for movement commands
-    rcl_subscription_t speed_subscriber;       // Subscriber for motor speed
-    std_msgs__msg__Int32 movement_msg;         // Message for movement commands
-    std_msgs__msg__Int32 speed_msg;            // Message for motor speed
+    rcl_subscription_t movement_subscriber; // Subscriber for movement commands
+    rcl_subscription_t speed_subscriber;    // Subscriber for motor speed
+    std_msgs__msg__Int32 movement_msg;      // Message for movement commands
+    std_msgs__msg__Int32 speed_msg;         // Message for motor speed
 
-    rclc_executor_t executor;                   // Executor to handle subscriptions
-    rclc_support_t support;                     // Support structure for ROS 2
-    rcl_allocator_t allocator;                  // Allocator for memory management
-    rcl_node_t node;                            // Node for communication
-    rcl_timer_t timer;   
-    
+    rclc_executor_t executor;  // Executor to handle subscriptions
+    rclc_support_t support;    // Support structure for ROS 2
+    rcl_allocator_t allocator; // Allocator for memory management
+    rcl_node_t node1; 
+     rcl_node_t node2;  
+     rcl_node_t node3;  
+     rcl_node_t node4;  
+     rcl_node_t node5;            // Node for communication
+    rcl_timer_t timer;
+
     // Publisher for ultrasonic sensor data
-rcl_publisher_t ultrasonic_publisher;
-std_msgs__msg__Float32 ultrasonic_msg;
+    rcl_publisher_t ultrasonic_publisher;
+    rcl_publisher_t ir_publisher;
+ std_msgs__msg__Float32 ir_msg;
+    std_msgs__msg__Float32 ultrasonic_msg;
 
-// Publisher for metal detector data
-rcl_publisher_t metal_detector_publisher;
-std_msgs__msg__Bool metal_detector_msg;                       // Timer for periodic tasks (if needed)
+    // Publisher for metal detector data
+    rcl_publisher_t metal_detector_publisher;
+    std_msgs__msg__Bool metal_detector_msg; // Timer for periodic tasks (if needed)
 
     // Callback functions for subscribers
     static void movement_subscription_callback(const void *msgin);

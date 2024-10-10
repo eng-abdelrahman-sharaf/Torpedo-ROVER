@@ -17,14 +17,16 @@ public:
   void grip(int angle); // Control the servo gripper
   bool metal_detect();
   float measureDistance(); // Measure distance using ultrasonic sensor
+  void updateIRCount1();
+  void updateIRCount2();        // Method to update IR count based on sensor
+  float calculateDistance(); // Method to calculate distance traveled
 
 private:                            // Main loop to handle system logic
 
   
 
 
-  void updateIRCount();      // Method to update IR count based on sensor
-  float calculateDistance(); // Method to calculate distance traveled
+  
   // Pin declarations
   static const int enablePin;
   static const int wheel1_pin1;
@@ -35,13 +37,16 @@ private:                            // Main loop to handle system logic
   static const int trigpin;
   static const int echopin;
   static const int _gripperPin;
-  static const int IRpin;
+  static const int IRpin1;
+  static const int IRpin2;
    static const int metal;
    const long threshold = 2.5 * 1023 / 3.3;
   Servo _gripper; // Servo object for gripper control
 
-  int pulse_count = 0;              // Pulse counter
-  int previous_state = LOW;         // Previous state of the IR sensor
+  int pulse_count1 = 0; 
+  int pulse_count2= 0;              // Pulse counter
+  int previous_state1 = LOW;    
+  int previous_state2 = LOW;        // Previous state of the IR sensor
   const float wheel_diameter = 6.5; // Wheel diameter in cm
   const int encoder_slots = 20;     // Number of slots in the encoder
 };
