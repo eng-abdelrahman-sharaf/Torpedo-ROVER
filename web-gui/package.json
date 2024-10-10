@@ -4,8 +4,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:css": "postcss styles/*.css --dir build/styles -w"
-    "build:ts": "tsc -p tsconfig.json -w"
+    "build:css": "postcss styles/*.css --dir build/styles -w",
+    "build:ts": "tsc --watch"
   },
   "keywords": [],
   "author": "",

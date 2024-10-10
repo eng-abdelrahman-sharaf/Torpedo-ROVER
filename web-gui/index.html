@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./build/index.css">    
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/eventemitter2@6.4.9/lib/eventemitter2.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/roslib@1/build/roslib.min.js"></script>
     <title>Torpedo Dragons</title>
 </head>
 <body class="h-full overflow-hidden text-5xl font-mono">
@@ -22,6 +23,7 @@
             <div class="text-8xl text-yellow-900">Data</div>
             <div>distance Traveled: <div class="variable">0</div> cm</div>  
             <div>obstacle distance: <div class="variable">0</div> cm </div>  
+            <div id="status">Ros2 is not Connected ❌</div>
         </div>
 
 
@@ -88,15 +90,15 @@
         <div class="flex flex-col justify-center items-center gap-8">
             
             <!-- Rover Motion -->
-            <div id="rover-motion" class="flex text-gray-700 gap-5 opacity-60 \
+            <div id="rover-motion" class="flex text-gray-700 gap-5 *:opacity-60 \
             *:w-20 *:h-20">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-iteration-ccw"><path d="M20 10c0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8h8"/><polyline points="16 14 20 18 16 22"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-iteration-cw"><path d="M4 10c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8H4"/><polyline points="8 22 4 18 8 14"/></svg>                
+                <svg id="rotate-left" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-iteration-ccw"><path d="M20 10c0-4.4-3.6-8-8-8s-8 3.6-8 8 3.6 8 8 8h8"/><polyline points="16 14 20 18 16 22"/></svg>
+                <svg id="arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up"><path d="m5 12 7-7 7 7"/><path d="M12 19V5"/></svg>
+                <svg id="rotate-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-iteration-cw"><path d="M4 10c0-4.4 3.6-8 8-8s8 3.6 8 8-3.6 8-8 8H4"/><polyline points="8 22 4 18 8 14"/></svg>                
             </div>
 
             <!-- actuators and cv controllers -->
-            <div class="flex gap-10 *:opacity-60 *:w-40 *:h-20 *:rounded-sm *:border-2 actuators-cv">
+            <div class="flex gap-10 *:opacity-60 *:w-40 *:h-20 *:rounded-sm *:border-2 actuators-cv [&>*:hover]:opacity-100 [&>*:active]:scale-90">
                 <svg width="1359" height="662" viewBox="0 0 1359 662" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect width="1359" height="662" fill="#324A5E"/>
                     <rect width="1359" height="110" fill="#2B3B4E"/>
@@ -155,10 +157,10 @@
             </div>
 
         </div>
-
-
     </div>
-    <script src="./build/src/index.js" ></script>
+    <!-- <script type="text/javascript" src="./build/src/ros-bridge.js"></script> -->
+    <script src="./src/index.js" type="module" ></script>
+
 </body>
 </html>
 

@@ -502,6 +502,9 @@ video {
 .invisible {
   visibility: hidden;
 }
+.static {
+  position: static;
+}
 .absolute {
   position: absolute;
 }
@@ -664,9 +667,6 @@ video {
   --tw-text-opacity: 1;
   color: rgb(113 63 18 / var(--tw-text-opacity));
 }
-.opacity-60 {
-  opacity: 0.6;
-}
 
 .actuators-cv{
     svg:hover {
@@ -749,6 +749,16 @@ video {
 
 .\*\:\*\:last\:hidden:last-child > * > * {
   display: none;
+}
+
+.\[\&\>\*\:active\]\:scale-90>*:active {
+  --tw-scale-x: .9;
+  --tw-scale-y: .9;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+
+.\[\&\>\*\:hover\]\:opacity-100>*:hover {
+  opacity: 1;
 }
 
 .\[\&\>\*\:not\(\:first-child\)\>\*\:first-child\]\:h-\[80px\]>*:not(:first-child)>*:first-child {
