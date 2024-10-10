@@ -1,0 +1,263 @@
+[2.118s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[2.118s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=8, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=None, packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, allow_overriding=[], cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7b081b0410c0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7b081b040bb0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7b081b040bb0>>)
+[6.480s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[6.481s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[6.481s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[6.481s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[6.481s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[6.481s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[6.481s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui'
+[6.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[6.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[6.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[6.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[6.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[6.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[6.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[6.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[6.481s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[6.575s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[6.575s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[6.575s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[6.575s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[6.575s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[6.576s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[6.576s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[6.576s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[6.576s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[6.576s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[6.576s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[6.576s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[6.576s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[6.576s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extensions ['ignore', 'ignore_ament_install']
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extension 'ignore'
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extension 'ignore_ament_install'
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extensions ['colcon_pkg']
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extension 'colcon_pkg'
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extensions ['colcon_meta']
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extension 'colcon_meta'
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extensions ['ros']
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extension 'ros'
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extensions ['cmake', 'python']
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extension 'cmake'
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extension 'python'
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extensions ['python_setup_py']
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite) by extension 'python_setup_py'
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi) by extensions ['ignore', 'ignore_ament_install']
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi) by extension 'ignore'
+[6.577s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi) by extension 'ignore_ament_install'
+[6.578s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi) by extensions ['colcon_pkg']
+[6.578s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi) by extension 'colcon_pkg'
+[6.578s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi) by extensions ['colcon_meta']
+[6.578s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi) by extension 'colcon_meta'
+[6.578s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi) by extensions ['ros']
+[6.578s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi) by extension 'ros'
+[6.581s] DEBUG:colcon.colcon_core.package_identification:Package 'rosbridge_suite/rosapi' with type 'ros.ament_cmake' and name 'rosapi'
+[6.581s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi_msgs) by extensions ['ignore', 'ignore_ament_install']
+[6.581s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi_msgs) by extension 'ignore'
+[6.581s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi_msgs) by extension 'ignore_ament_install'
+[6.582s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi_msgs) by extensions ['colcon_pkg']
+[6.582s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi_msgs) by extension 'colcon_pkg'
+[6.582s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi_msgs) by extensions ['colcon_meta']
+[6.582s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi_msgs) by extension 'colcon_meta'
+[6.582s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi_msgs) by extensions ['ros']
+[6.582s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosapi_msgs) by extension 'ros'
+[6.583s] DEBUG:colcon.colcon_core.package_identification:Package 'rosbridge_suite/rosapi_msgs' with type 'ros.ament_cmake' and name 'rosapi_msgs'
+[6.583s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_library) by extensions ['ignore', 'ignore_ament_install']
+[6.583s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_library) by extension 'ignore'
+[6.583s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_library) by extension 'ignore_ament_install'
+[6.583s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_library) by extensions ['colcon_pkg']
+[6.583s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_library) by extension 'colcon_pkg'
+[6.584s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_library) by extensions ['colcon_meta']
+[6.584s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_library) by extension 'colcon_meta'
+[6.584s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_library) by extensions ['ros']
+[6.584s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_library) by extension 'ros'
+[6.585s] DEBUG:colcon.colcon_core.package_identification:Package 'rosbridge_suite/rosbridge_library' with type 'ros.ament_cmake' and name 'rosbridge_library'
+[6.585s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_msgs) by extensions ['ignore', 'ignore_ament_install']
+[6.586s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_msgs) by extension 'ignore'
+[6.586s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_msgs) by extension 'ignore_ament_install'
+[6.586s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_msgs) by extensions ['colcon_pkg']
+[6.586s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_msgs) by extension 'colcon_pkg'
+[6.586s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_msgs) by extensions ['colcon_meta']
+[6.586s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_msgs) by extension 'colcon_meta'
+[6.586s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_msgs) by extensions ['ros']
+[6.586s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_msgs) by extension 'ros'
+[6.587s] DEBUG:colcon.colcon_core.package_identification:Package 'rosbridge_suite/rosbridge_msgs' with type 'ros.ament_cmake' and name 'rosbridge_msgs'
+[6.588s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_server) by extensions ['ignore', 'ignore_ament_install']
+[6.588s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_server) by extension 'ignore'
+[6.588s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_server) by extension 'ignore_ament_install'
+[6.588s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_server) by extensions ['colcon_pkg']
+[6.588s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_server) by extension 'colcon_pkg'
+[6.588s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_server) by extensions ['colcon_meta']
+[6.588s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_server) by extension 'colcon_meta'
+[6.588s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_server) by extensions ['ros']
+[6.588s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_server) by extension 'ros'
+[6.590s] DEBUG:colcon.colcon_core.package_identification:Package 'rosbridge_suite/rosbridge_server' with type 'ros.ament_cmake' and name 'rosbridge_server'
+[6.590s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_suite) by extensions ['ignore', 'ignore_ament_install']
+[6.590s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_suite) by extension 'ignore'
+[6.590s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_suite) by extension 'ignore_ament_install'
+[6.590s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_suite) by extensions ['colcon_pkg']
+[6.590s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_suite) by extension 'colcon_pkg'
+[6.590s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_suite) by extensions ['colcon_meta']
+[6.590s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_suite) by extension 'colcon_meta'
+[6.590s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_suite) by extensions ['ros']
+[6.590s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_suite) by extension 'ros'
+[6.591s] DEBUG:colcon.colcon_core.package_identification:Package 'rosbridge_suite/rosbridge_suite' with type 'ros.ament_cmake' and name 'rosbridge_suite'
+[6.591s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_test_msgs) by extensions ['ignore', 'ignore_ament_install']
+[6.591s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_test_msgs) by extension 'ignore'
+[6.591s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_test_msgs) by extension 'ignore_ament_install'
+[6.591s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_test_msgs) by extensions ['colcon_pkg']
+[6.592s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_test_msgs) by extension 'colcon_pkg'
+[6.592s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_test_msgs) by extensions ['colcon_meta']
+[6.592s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_test_msgs) by extension 'colcon_meta'
+[6.592s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_test_msgs) by extensions ['ros']
+[6.592s] Level 1:colcon.colcon_core.package_identification:_identify(rosbridge_suite/rosbridge_test_msgs) by extension 'ros'
+[6.593s] DEBUG:colcon.colcon_core.package_identification:Package 'rosbridge_suite/rosbridge_test_msgs' with type 'ros.ament_cmake' and name 'rosbridge_test_msgs'
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[6.593s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extensions ['ignore', 'ignore_ament_install']
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extension 'ignore'
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extension 'ignore_ament_install'
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extensions ['colcon_pkg']
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extension 'colcon_pkg'
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extensions ['colcon_meta']
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extension 'colcon_meta'
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extensions ['ros']
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extension 'ros'
+[6.594s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extensions ['cmake', 'python']
+[6.595s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extension 'cmake'
+[6.595s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extension 'python'
+[6.595s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extensions ['python_setup_py']
+[6.595s] Level 1:colcon.colcon_core.package_identification:_identify(styles) by extension 'python_setup_py'
+[6.595s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[6.595s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[6.595s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[6.595s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[6.595s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[6.765s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[6.765s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[6.846s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/omarwaleed/turtle_catch_ws/install
+[6.848s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 277 installed packages in /opt/ros/humble
+[6.862s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[6.930s] Level 5:colcon.colcon_core.verb:set package 'rosapi_msgs' build argument 'cmake_args' from command line to 'None'
+[6.930s] Level 5:colcon.colcon_core.verb:set package 'rosapi_msgs' build argument 'cmake_target' from command line to 'None'
+[6.930s] Level 5:colcon.colcon_core.verb:set package 'rosapi_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[6.930s] Level 5:colcon.colcon_core.verb:set package 'rosapi_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[6.930s] Level 5:colcon.colcon_core.verb:set package 'rosapi_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[6.930s] Level 5:colcon.colcon_core.verb:set package 'rosapi_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[6.930s] Level 5:colcon.colcon_core.verb:set package 'rosapi_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[6.930s] Level 5:colcon.colcon_core.verb:set package 'rosapi_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[6.930s] Level 5:colcon.colcon_core.verb:set package 'rosapi_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[6.930s] DEBUG:colcon.colcon_core.verb:Building package 'rosapi_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosapi_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosapi_msgs', 'merge_install': False, 'path': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosapi_msgs', 'symlink_install': False, 'test_result_base': None}
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_msgs' build argument 'cmake_args' from command line to 'None'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_msgs' build argument 'cmake_target' from command line to 'None'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[6.931s] DEBUG:colcon.colcon_core.verb:Building package 'rosbridge_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosbridge_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosbridge_msgs', 'merge_install': False, 'path': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_msgs', 'symlink_install': False, 'test_result_base': None}
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_test_msgs' build argument 'cmake_args' from command line to 'None'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_test_msgs' build argument 'cmake_target' from command line to 'None'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_test_msgs' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_test_msgs' build argument 'cmake_clean_cache' from command line to 'False'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_test_msgs' build argument 'cmake_clean_first' from command line to 'False'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_test_msgs' build argument 'cmake_force_configure' from command line to 'False'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_test_msgs' build argument 'ament_cmake_args' from command line to 'None'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_test_msgs' build argument 'catkin_cmake_args' from command line to 'None'
+[6.931s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_test_msgs' build argument 'catkin_skip_building_tests' from command line to 'False'
+[6.932s] DEBUG:colcon.colcon_core.verb:Building package 'rosbridge_test_msgs' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosbridge_test_msgs', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosbridge_test_msgs', 'merge_install': False, 'path': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_test_msgs', 'symlink_install': False, 'test_result_base': None}
+[6.932s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_library' build argument 'cmake_args' from command line to 'None'
+[6.932s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_library' build argument 'cmake_target' from command line to 'None'
+[6.932s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_library' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[6.932s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_library' build argument 'cmake_clean_cache' from command line to 'False'
+[6.932s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_library' build argument 'cmake_clean_first' from command line to 'False'
+[6.932s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_library' build argument 'cmake_force_configure' from command line to 'False'
+[6.932s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_library' build argument 'ament_cmake_args' from command line to 'None'
+[6.932s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_library' build argument 'catkin_cmake_args' from command line to 'None'
+[6.932s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_library' build argument 'catkin_skip_building_tests' from command line to 'False'
+[6.932s] DEBUG:colcon.colcon_core.verb:Building package 'rosbridge_library' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosbridge_library', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosbridge_library', 'merge_install': False, 'path': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_library', 'symlink_install': False, 'test_result_base': None}
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosapi' build argument 'cmake_args' from command line to 'None'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosapi' build argument 'cmake_target' from command line to 'None'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosapi' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosapi' build argument 'cmake_clean_cache' from command line to 'False'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosapi' build argument 'cmake_clean_first' from command line to 'False'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosapi' build argument 'cmake_force_configure' from command line to 'False'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosapi' build argument 'ament_cmake_args' from command line to 'None'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosapi' build argument 'catkin_cmake_args' from command line to 'None'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosapi' build argument 'catkin_skip_building_tests' from command line to 'False'
+[6.933s] DEBUG:colcon.colcon_core.verb:Building package 'rosapi' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosapi', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosapi', 'merge_install': False, 'path': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosapi', 'symlink_install': False, 'test_result_base': None}
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_server' build argument 'cmake_args' from command line to 'None'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_server' build argument 'cmake_target' from command line to 'None'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_server' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_server' build argument 'cmake_clean_cache' from command line to 'False'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_server' build argument 'cmake_clean_first' from command line to 'False'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_server' build argument 'cmake_force_configure' from command line to 'False'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_server' build argument 'ament_cmake_args' from command line to 'None'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_server' build argument 'catkin_cmake_args' from command line to 'None'
+[6.933s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_server' build argument 'catkin_skip_building_tests' from command line to 'False'
+[6.933s] DEBUG:colcon.colcon_core.verb:Building package 'rosbridge_server' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosbridge_server', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosbridge_server', 'merge_install': False, 'path': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_server', 'symlink_install': False, 'test_result_base': None}
+[6.934s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_suite' build argument 'cmake_args' from command line to 'None'
+[6.934s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_suite' build argument 'cmake_target' from command line to 'None'
+[6.934s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_suite' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[6.934s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_suite' build argument 'cmake_clean_cache' from command line to 'False'
+[6.934s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_suite' build argument 'cmake_clean_first' from command line to 'False'
+[6.934s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_suite' build argument 'cmake_force_configure' from command line to 'False'
+[6.934s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_suite' build argument 'ament_cmake_args' from command line to 'None'
+[6.934s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_suite' build argument 'catkin_cmake_args' from command line to 'None'
+[6.934s] Level 5:colcon.colcon_core.verb:set package 'rosbridge_suite' build argument 'catkin_skip_building_tests' from command line to 'False'
+[6.934s] DEBUG:colcon.colcon_core.verb:Building package 'rosbridge_suite' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosbridge_suite', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosbridge_suite', 'merge_install': False, 'path': '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_suite', 'symlink_install': False, 'test_result_base': None}
+[6.934s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[6.935s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[6.936s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_test_msgs' with build type 'ament_cmake'
+[6.936s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_test_msgs'
+[6.947s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[6.948s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.948s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.968s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosapi_msgs' with build type 'ament_cmake'
+[6.969s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosapi_msgs'
+[6.969s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.969s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.972s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_msgs' with build type 'ament_cmake'
+[6.973s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_msgs'
+[6.973s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.973s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.982s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosbridge_test_msgs': CMAKE_PREFIX_PATH=/home/omarwaleed/turtle_catch_ws/install/turtle_catch:/opt/ros/humble /usr/bin/cmake /home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_test_msgs -DCMAKE_INSTALL_PREFIX=/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosbridge_test_msgs
+[6.985s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosapi_msgs': CMAKE_PREFIX_PATH=/home/omarwaleed/turtle_catch_ws/install/turtle_catch:/opt/ros/humble /usr/bin/cmake /home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosapi_msgs -DCMAKE_INSTALL_PREFIX=/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosapi_msgs
+[6.989s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosbridge_msgs': CMAKE_PREFIX_PATH=/home/omarwaleed/turtle_catch_ws/install/turtle_catch:/opt/ros/humble /usr/bin/cmake /home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_msgs -DCMAKE_INSTALL_PREFIX=/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosbridge_msgs
+[11.479s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete was interrupted
+[11.479s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete again
+[11.489s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/build/rosbridge_msgs' returned '-2': CMAKE_PREFIX_PATH=/home/omarwaleed/turtle_catch_ws/install/turtle_catch:/opt/ros/humble /usr/bin/cmake /home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/rosbridge_suite/rosbridge_msgs -DCMAKE_INSTALL_PREFIX=/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/rosbridge_msgs
+[11.606s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished
+[11.606s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[11.606s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[11.606s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[11.642s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[11.642s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[11.642s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[11.669s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[11.670s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/local_setup.ps1'
+[11.676s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/_local_setup_util_ps1.py'
+[11.681s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/setup.ps1'
+[11.687s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/local_setup.sh'
+[11.702s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/_local_setup_util_sh.py'
+[11.703s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/setup.sh'
+[11.706s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/local_setup.bash'
+[11.723s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/setup.bash'
+[11.727s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/local_setup.zsh'
+[11.729s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/omarwaleed/Desktop/project/component/Torpedo-ROVER/web-gui/install/setup.zsh'

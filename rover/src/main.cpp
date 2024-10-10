@@ -9,18 +9,15 @@ System sys;
 void setup() { 
   Serial.begin(115200);
   Serial.println("hi");
-      pinMode(22 , OUTPUT);
       sys.setup();
-      sys.move_forward(255);
+     
+      // sys.move_forward(20);
 
         comm.initialize_comms();  
-        // Initialize ROS communication
-      // Call motorControl's setup method
 }
 
 void loop() {
-
-      // Continuously check for speed and control the motor
-//    comm.spin();
+      // sys.updateIRCount1();
+   comm.spin();
       return;
 }

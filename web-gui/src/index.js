@@ -8,7 +8,7 @@ function setRangeUpdater(range , onChange) {
     const div = range.children[0].children[1];
     input.addEventListener("input", function () {
         div.innerHTML = input.value;
-        onChange(input.value);
+        onChange(parseFloat(input.value));
     });
 }
 

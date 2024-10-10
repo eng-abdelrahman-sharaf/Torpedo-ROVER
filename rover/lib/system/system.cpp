@@ -3,21 +3,23 @@
 
 // Constructor definition
 System::System() {
-    pulse_count = 0; // Initialize pulse count
-    previous_state = LOW; // Initialize previous state
+    
+    previous_state1= LOW; // Initialize previous state
+    previous_state2= LOW;
 }
 // Pin definitions (moved from .cpp to .h)
 const int System::enablePin = 19;
-const int System::wheel1_pin1 = 22;
-const int System::wheel1_pin2 = 33;
+const int System::wheel1_pin1 = 33;
+const int System::wheel1_pin2 = 22;
 const int System::enablepin2 = 34;
 const int System::wheel2_pin1 = 18;
 const int System::wheel2_pin2 = 5;
 const int System::trigpin = 2;
 const int System::echopin = 15;
-const int System ::IRpin=28;
-const int System::_gripperPin = 27;
-const int System::metal = 39;
+const int System ::IRpin1=25;
+const int System ::IRpin2=27;
+const int System::_gripperPin = 23;
+const int System::metal = 4;
 
 // Setup method for initializing the system
 void System::setup()
@@ -28,7 +30,7 @@ void System::setup()
 // Motor initialization method
 void System::motor()
 {
-    pinMode(22 , OUTPUT);
+    // pinMode(22 , OUTPUT);
     pinMode(enablePin, OUTPUT);
     pinMode(wheel1_pin1, OUTPUT);
     pinMode(wheel1_pin2, OUTPUT);
@@ -37,7 +39,8 @@ void System::motor()
     pinMode(wheel2_pin2, OUTPUT);
     pinMode(trigpin, OUTPUT);
     pinMode(echopin, INPUT);
-    pinMode(IRpin,INPUT);
+    pinMode(IRpin1,INPUT);
+    pinMode(IRpin2,INPUT);
     pinMode(metal,INPUT);
     _gripper.attach(_gripperPin); // Attach the servo to the gripper pin
 }
@@ -179,18 +182,32 @@ float System::measureDistance()
     return distance;
 }
 // Method to update the IR sensor pulse count
-void System::updateIRCount()
+void System::updateIRCount1()
 {
-    int current_state = digitalRead(IRpin);  // Read the current state of the IR sensor
+    int current_state = digitalRead(IRpin1);  // Read the current state of the IR sensor
 
     // Check if the state has changed from the previous reading
-    if (current_state != previous_state)
+    if (current_state != previous_state1)
     {
         if (current_state == HIGH)  // If the state changed to HIGH (detecting a slot)
         {
-            pulse_count++;  // Increment the pulse count
+            pulse_count1++;  // Increment the pulse count
         }
-        previous_state = current_state;  // Update the previous state
+        previous_state1 = current_state;  // Update the previous state
+    }
+}
+void System::updateIRCount2()
+{
+    int current_state = digitalRead(IRpin2);  // Read the current state of the IR sensor
+
+    // Check if the state has changed from the previous reading
+    if (current_state != previous_state2)
+    {
+        if (current_state == HIGH)  // If the state changed to HIGH (detecting a slot)
+        {
+            pulse_count2++;  // Increment the pulse count
+        }
+        previous_state2 = current_state;  // Update the previous state
     }
 }
 
@@ -204,7 +221,8 @@ float System::calculateDistance()
     float distance_per_pulse = circumference / encoder_slots;
 
     // Calculate total distance traveled
-    return pulse_count * distance_per_pulse;
+    // return ((pulse_count1+ pulse_count2)/2) * distance_per_pulse;
+    return pulse_count1;
 }
 bool System ::metal_detect()
 {
