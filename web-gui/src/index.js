@@ -8,7 +8,7 @@ function setRangeUpdater(range , onChange) {
     const div = range.children[0].children[1];
     input.addEventListener("input", function () {
         div.innerHTML = input.value;
-        onChange(input.value);
+        onChange(parseFloat(input.value));
     });
 }
 
@@ -28,10 +28,11 @@ document.addEventListener("keydown", function (e) {
             if (key.key === chosenOperation) return;
             chosenOperation = key.key
             console.log(key.key);
-            publish("/pub_topic", "std_msgs/String" , key.key);
+            publish("/keyboard_input", "std_msgs/String" , key.key);
         }
     }
 });
+
 document.addEventListener("keyup", function (e) {
     for (let key of keys) {
         if (e.key === key.key) {
@@ -39,7 +40,12 @@ document.addEventListener("keyup", function (e) {
             key.object.classList.remove("!opacity-100");
             console.log(key.key, "up");
             chosenOperation = "stop";
-            publish("/pub_topic", "std_msgs/String" , "stop");
+            publish("/keyboard_input", "std_msgs/String" , "stop");
         }
     }
 });
+
+document.getElementById("grip").addEventListener("click", function () { 
+    if (chosenOperation == "grip") publish("/keyboard_input", "std_msgs/String", "grip");
+    else publish("/keyboard_input", "std_msgs/String", "stop");
+})
