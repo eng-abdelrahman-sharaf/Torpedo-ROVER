@@ -74,3 +74,13 @@ document.getElementById("shape-detect").addEventListener("click", function () {
     }
 })
 
+
+document.getElementById("line-follow").addEventListener("click", function () { 
+    if (chosenOperation === "line-follow") publish("/image", "std_msgs/Int32", 0);
+    else {
+        chosenOperation = "shape-detect";
+        publish("/keyboard_input", "std_msgs/Int32", 4 );
+        publish("/image", "std_msgs/Int32", 2);
+    }
+})
+
