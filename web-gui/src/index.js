@@ -17,7 +17,16 @@ setRangeUpdater(range2 , (value)=>publish("/rotation_speed", "std_msgs/Float32" 
 const ArrowUp = document.getElementById("arrow-up");
 const rotateLeft = document.getElementById("rotate-left");
 const rotateRight = document.getElementById("rotate-right");
-const keys = [{ key: "ArrowUp", object: ArrowUp }, { key: "ArrowLeft", object: rotateLeft }, { key: "ArrowRight", object: rotateRight }];
+const keys = [{ key: "ArrowUp", object: ArrowUp , message : 1 }, { key: "ArrowLeft", object: rotateLeft , message:3 }, { key: "ArrowRight", object: rotateRight , message:2 }];
+const ctas = [
+    { operation: "grip", object: document.getElementById("grip"),  }, 
+    // line-follow - > stop
+    { operation: "line-follow", object: document.getElementById("line-follow"),  },
+    // encoder-reset
+    { operation: "encoder-reset", object: document.getElementById("encoder-reset"),  },
+    // shape-detect -> stop
+    { operation: "shape-detect", object: document.getElementById("shape-detect"), }
+];
 let chosenOperation = "stop";
 
 document.addEventListener("keydown", function (e) {
@@ -28,7 +37,7 @@ document.addEventListener("keydown", function (e) {
             if (key.key === chosenOperation) return;
             chosenOperation = key.key
             console.log(key.key);
-            publish("/keyboard_input", "std_msgs/String" , key.key);
+            publish("/keyboard_input", "std_msgs/Int32" , key.message);
         }
     }
 });
@@ -38,14 +47,19 @@ document.addEventListener("keyup", function (e) {
         if (e.key === key.key) {
             e.preventDefault();
             key.object.classList.remove("!opacity-100");
-            console.log(key.key, "up");
+            // console.log(key.key, "up");
             chosenOperation = "stop";
-            publish("/keyboard_input", "std_msgs/String" , "stop");
+            publish("/keyboard_input", "std_msgs/Int32" , 4);
         }
     }
 });
 
-document.getElementById("grip").addEventListener("click", function () { 
-    if (chosenOperation == "grip") publish("/keyboard_input", "std_msgs/String", "grip");
-    else publish("/keyboard_input", "std_msgs/String", "stop");
-})
+for (let cta of ctas) { 
+    cta.object.addEventListener("click", function () {
+        if (cta.operation == chosenOperation) return;
+        else {
+            chosenOperation = cta.key;
+            publish("/keyboard_input", "std_msgs/String", cta.operation);
+        }
+    });
+}
