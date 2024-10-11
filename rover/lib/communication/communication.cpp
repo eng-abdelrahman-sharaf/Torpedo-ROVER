@@ -18,18 +18,21 @@ void Communication::movement_subscription_callback(const void *msgin)
     switch (msg->data)
     {
     case 1:
-        // motorControl.move_forward(motor_speed);
-        motorControl.move_forward(255);
+        motorControl.move_forward(motor_speed);
+        // motorControl.move_forward(255);
 
     
         break;
     case 2:
+        motorControl.stop();
         motorControl.rotate_right(motor_speed);
         break;
     case 3:
+        motorControl.stop();
         motorControl.rotate_left(motor_speed);
         break;
     case 4:
+        // motorControl.move_forward(0);
         motorControl.stop();
         break;
     default:
@@ -44,6 +47,16 @@ void Communication::speed_subscription_callback(const void *msgin)
 {
     const std_msgs__msg__Int32 *msg = (const std_msgs__msg__Int32 *)msgin;
     motor_speed = msg->data;
+    if(chosenOperation == 1){
+        motorControl.move_forward(motor_speed);
+    }
+    else if(chosenOperation == 2){
+        motorControl.rotate_right(motor_speed);
+    }
+    else if(chosenOperation == 3){
+        motorControl.rotate_left(motor_speed);
+    }
+
 }
 float read_Ir()
 {
@@ -115,8 +128,8 @@ void Communication::publish_sensors()
     motorControl.updateIRCount2();
 
     // Publish ultrasonic sensor data
-    ultrasonic_msg.data = read_ultrasonic();
-   rcl_publish(&ultrasonic_publisher, &ultrasonic_msg, NULL);
+    // ultrasonic_msg.data = read_ultrasonic();
+    // rcl_publish(&ultrasonic_publisher, &ultrasonic_msg, NULL);
 
     // Publish metal detector data
     metal_detector_msg.data = read_metal_detector();

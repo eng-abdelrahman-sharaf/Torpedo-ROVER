@@ -28,10 +28,10 @@ private:                            // Main loop to handle system logic
 
   
   // Pin declarations
-  static const int enablePin;
+  // static const int enablePin;
   static const int wheel1_pin1;
   static const int wheel1_pin2;
-  static const int enablepin2;
+  // static const int enablepin2;
   static const int wheel2_pin1;
   static const int wheel2_pin2;
   static const int trigpin;

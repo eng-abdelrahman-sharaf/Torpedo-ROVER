@@ -97,8 +97,8 @@ void System::move_forward(int speed)
     }
     else
     {
-        analogWrite(enablePin, 0);  // Stop motor
-        analogWrite(enablepin2, 0); // Stop motor
+        analogWrite(wheel1_pin1, 0);  // Stop motor
+        analogWrite(wheel2_pin1, 0); // Stop motor
     }
 }
 
@@ -112,18 +112,15 @@ void System::rotate_right(int rot_speed)
         digitalWrite(wheel1_pin2, LOW);
         digitalWrite(wheel2_pin1, LOW);
         digitalWrite(wheel2_pin2, LOW);
-        analogWrite(enablepin2, 0);
     }
     else
     {
         // stop 2 motors
         digitalWrite(wheel2_pin1, LOW);
         digitalWrite(wheel2_pin2, LOW);
-        analogWrite(enablepin2, 0);
 
         digitalWrite(wheel1_pin1, LOW);
         digitalWrite(wheel1_pin2, LOW);
-        analogWrite(enablePin, 0);
     }
 }
 void System::rotate_left(int rot_speed)
@@ -131,34 +128,29 @@ void System::rotate_left(int rot_speed)
     if (rot_speed > 0)
     {
         // Rotate motor 2 forward, motor 1 stop
-        digitalWrite(wheel2_pin1, HIGH);
+        analogWrite(wheel2_pin1, rot_speed);
         digitalWrite(wheel2_pin2, LOW);
-        analogWrite(enablepin2, rot_speed);
 
         digitalWrite(wheel1_pin1, LOW);
         digitalWrite(wheel1_pin2, LOW);
-        analogWrite(enablePin, 0);
     }
     else
     {
         // stop 2 motors
         digitalWrite(wheel2_pin1, LOW);
         digitalWrite(wheel2_pin2, LOW);
-        analogWrite(enablepin2, 0);
 
         digitalWrite(wheel1_pin1, LOW);
         digitalWrite(wheel1_pin2, LOW);
-        analogWrite(enablePin, 0);
     }
 }
 void System :: stop()
 {
-    digitalWrite(wheel1_pin1, LOW);
-    digitalWrite(wheel1_pin2, LOW);
-    analogWrite(enablePin, 0);
-    digitalWrite(wheel2_pin1, LOW);
-    digitalWrite(wheel2_pin2, LOW);
-    analogWrite(enablepin2, 0);
+    move_forward(0);
+    // digitalWrite(wheel1_pin1, LOW);
+    // digitalWrite(wheel1_pin2, LOW);
+    // digitalWrite(wheel2_pin1, LOW);
+    // digitalWrite(wheel2_pin2, LOW);
 }
 // Method to control the servo gripper
 void System::grip(int angle)
