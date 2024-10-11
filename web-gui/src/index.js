@@ -54,12 +54,23 @@ document.addEventListener("keyup", function (e) {
     }
 });
 
-for (let cta of ctas) { 
-    cta.object.addEventListener("click", function () {
-        if (cta.operation == chosenOperation) return;
-        else {
-            chosenOperation = cta.key;
-            publish("/keyboard_input", "std_msgs/String", cta.operation);
-        }
-    });
-}
+// for (let cta of ctas) {
+//     cta.object.addEventListener("click", function () {
+//         if (cta.operation == chosenOperation) return;
+//         else {
+//             chosenOperation = cta.key;
+//             publish("/keyboard_input", "std_msgs/String", cta.operation);
+//         }
+//     });
+// }
+
+
+document.getElementById("shape-detect").addEventListener("click", function () { 
+    if (chosenOperation === "shape-detect") publish("/image", "std_msgs/Int32", 0);
+    else {
+        chosenOperation = "shape-detect";
+        publish("/keyboard_input", "std_msgs/Int32", 4 );
+        publish("/image", "std_msgs/Int32", 1);
+    }
+})
+
