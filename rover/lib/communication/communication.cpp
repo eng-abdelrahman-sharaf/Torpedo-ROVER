@@ -35,6 +35,10 @@ void Communication::movement_subscription_callback(const void *msgin)
         // motorControl.move_forward(0);
         motorControl.stop();
         break;
+        case 5:
+        // motorControl.move_forward(0);
+        motorControl.Reset();
+        break;
     default:
         motorControl.stop();
         // digitalWrite(22, LOW);

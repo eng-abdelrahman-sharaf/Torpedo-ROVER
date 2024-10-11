@@ -176,6 +176,7 @@ float System::measureDistance()
 // Method to update the IR sensor pulse count
 void System::updateIRCount1()
 {
+    pulse_count1=0;
     int current_state = digitalRead(IRpin1);  // Read the current state of the IR sensor
 
     // Check if the state has changed from the previous reading
@@ -190,6 +191,7 @@ void System::updateIRCount1()
 }
 void System::updateIRCount2()
 {
+    
     int current_state = digitalRead(IRpin2);  // Read the current state of the IR sensor
 
     // Check if the state has changed from the previous reading
@@ -225,3 +227,11 @@ bool System ::metal_detect()
     }
  return false;
 }
+
+
+void System :: Reset ()
+{
+    pulse_count1=0;
+    pulse_count2=0;
+}
+

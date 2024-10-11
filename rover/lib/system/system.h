@@ -20,7 +20,7 @@ public:
   void updateIRCount1();
   void updateIRCount2();        // Method to update IR count based on sensor
   float calculateDistance(); // Method to calculate distance traveled
-
+   void Reset() ;  
 private:                            // Main loop to handle system logic
 
   
@@ -48,7 +48,8 @@ private:                            // Main loop to handle system logic
   int previous_state1 = LOW;    
   int previous_state2 = LOW;        // Previous state of the IR sensor
   const float wheel_diameter = 6.5; // Wheel diameter in cm
-  const int encoder_slots = 20;     // Number of slots in the encoder
+  const int encoder_slots = 20; 
+   // Number of slots in the encoder
 };
 
 #endif
