@@ -1,0 +1,20 @@
+using html css to make a well-locking web page to represent the gui of the rover
+
+using rosbridge agent to be middle ware between ros2 and the web page as ros2 runs using tcp communication and webpages can't use tcp
+
+detecting the line using by simulating the concept of ir sensors by dividing the screen into 3 parts the left (small part) the middle (biggest part) the right (small part)
+
+
+problems:
+
+connecting webpages to ros2 as they can't use tcp, the solution using ros_bridge or using pyqt to design using qt-designer which is a drag and drop application and simpler to use 
+
+the mcu port wasn't defined, the solution was to disable brial tty which is made as an accessibility for blind people
+
+the Linux broke down so we used ros2 on docker and learned that its important to give ubuntu good space and to give home a good portion of it 
+
+connecting the camera to the laptop using wifi, used ipwebcam 
+
+the camera has very high latency, the solution changing the resolution from the advanced ip webcam advanced settings 480x320
+
+
