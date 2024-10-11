@@ -8,17 +8,25 @@ System::System() {
     previous_state2= LOW;
 }
 // Pin definitions (moved from .cpp to .h)
-const int System::enablePin = 19;
-const int System::wheel1_pin1 = 33;
-const int System::wheel1_pin2 = 22;
-const int System::enablepin2 = 34;
+// const int System::enablePin = 19;
+// const int System::wheel1_pin1 = 33;
+// const int System::wheel1_pin2 = 22;
+// const int System::enablepin2 = 34;
+// const int System::wheel2_pin1 = 18;
+// const int System::wheel2_pin2 = 5;
+// const int System::trigpin = 2;
+// const int System::echopin = 15;
+// const int System ::IRpin1=25;
+// const int System ::IRpin2=27;
+// const int System::_gripperPin = 23;
+// const int System::metal = 4;
+const int System::wheel1_pin1 = 2;
+const int System::wheel1_pin2 = 32;
 const int System::wheel2_pin1 = 18;
-const int System::wheel2_pin2 = 5;
-const int System::trigpin = 2;
-const int System::echopin = 15;
+const int System::wheel2_pin2 = 17;
 const int System ::IRpin1=25;
-const int System ::IRpin2=27;
-const int System::_gripperPin = 23;
+const int System ::IRpin2=19;
+const int System::_gripperPin = 27;
 const int System::metal = 4;
 
 // Setup method for initializing the system
@@ -31,14 +39,10 @@ void System::setup()
 void System::motor()
 {
     // pinMode(22 , OUTPUT);
-    pinMode(enablePin, OUTPUT);
     pinMode(wheel1_pin1, OUTPUT);
     pinMode(wheel1_pin2, OUTPUT);
-    pinMode(enablepin2, OUTPUT);
     pinMode(wheel2_pin1, OUTPUT);
     pinMode(wheel2_pin2, OUTPUT);
-    pinMode(trigpin, OUTPUT);
-    pinMode(echopin, INPUT);
     pinMode(IRpin1,INPUT);
     pinMode(IRpin2,INPUT);
     pinMode(metal,INPUT);
@@ -86,17 +90,15 @@ void System::move_forward(int speed)
 {
     if (speed >= 0 && speed <= 255)
     {
-        digitalWrite(wheel1_pin1, HIGH);
+        analogWrite(wheel1_pin1, speed);
         digitalWrite(wheel1_pin2, LOW);
-        digitalWrite(wheel2_pin1, HIGH);
+        analogWrite(wheel2_pin1, speed);
         digitalWrite(wheel2_pin2, LOW);
-        analogWrite(enablePin, speed);
-        analogWrite(enablepin2, speed);
     }
     else
     {
-        analogWrite(enablePin, 0);  // Stop motor
-        analogWrite(enablepin2, 0); // Stop motor
+        analogWrite(wheel1_pin1, 0);  // Stop motor
+        analogWrite(wheel2_pin1, 0); // Stop motor
     }
 }
 
@@ -106,24 +108,19 @@ void System::rotate_right(int rot_speed)
     if (rot_speed > 0)
     {
         // Rotate motor 1 forward, motor 2 stop
-        digitalWrite(wheel1_pin1, HIGH);
+        analogWrite(wheel1_pin1, rot_speed);
         digitalWrite(wheel1_pin2, LOW);
-        analogWrite(enablePin, rot_speed);
-
         digitalWrite(wheel2_pin1, LOW);
         digitalWrite(wheel2_pin2, LOW);
-        analogWrite(enablepin2, 0);
     }
     else
     {
         // stop 2 motors
         digitalWrite(wheel2_pin1, LOW);
         digitalWrite(wheel2_pin2, LOW);
-        analogWrite(enablepin2, 0);
 
         digitalWrite(wheel1_pin1, LOW);
         digitalWrite(wheel1_pin2, LOW);
-        analogWrite(enablePin, 0);
     }
 }
 void System::rotate_left(int rot_speed)
@@ -131,34 +128,29 @@ void System::rotate_left(int rot_speed)
     if (rot_speed > 0)
     {
         // Rotate motor 2 forward, motor 1 stop
-        digitalWrite(wheel2_pin1, HIGH);
+        analogWrite(wheel2_pin1, rot_speed);
         digitalWrite(wheel2_pin2, LOW);
-        analogWrite(enablepin2, rot_speed);
 
         digitalWrite(wheel1_pin1, LOW);
         digitalWrite(wheel1_pin2, LOW);
-        analogWrite(enablePin, 0);
     }
     else
     {
         // stop 2 motors
         digitalWrite(wheel2_pin1, LOW);
         digitalWrite(wheel2_pin2, LOW);
-        analogWrite(enablepin2, 0);
 
         digitalWrite(wheel1_pin1, LOW);
         digitalWrite(wheel1_pin2, LOW);
-        analogWrite(enablePin, 0);
     }
 }
 void System :: stop()
 {
-    digitalWrite(wheel1_pin1, LOW);
-    digitalWrite(wheel1_pin2, LOW);
-    analogWrite(enablePin, 0);
-    digitalWrite(wheel2_pin1, LOW);
-    digitalWrite(wheel2_pin2, LOW);
-    analogWrite(enablepin2, 0);
+    move_forward(0);
+    // digitalWrite(wheel1_pin1, LOW);
+    // digitalWrite(wheel1_pin2, LOW);
+    // digitalWrite(wheel2_pin1, LOW);
+    // digitalWrite(wheel2_pin2, LOW);
 }
 // Method to control the servo gripper
 void System::grip(int angle)

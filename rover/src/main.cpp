@@ -11,13 +11,13 @@ void setup() {
   Serial.println("hi");
       sys.setup();
      
-      // sys.move_forward(20);
+    
 
         comm.initialize_comms();  
 }
 
 void loop() {
-      // sys.updateIRCount1();
+ 
    comm.spin();
       return;
 }
